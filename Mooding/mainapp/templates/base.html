@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+    />
+    <title>Mooding</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}" />
+    <link rel="stylesheet" href="{% static 'style-home.css' %}" />
+    <link rel="stylesheet" href="{% static 'style-coupon.css' %}" />
+    <link rel="stylesheet" href="{% static 'style-information.css' %}" />
+    <link rel="stylesheet" href="{% static 'style-allcafe.css' %}" />
+    {% block head %}{% endblock %}
+  </head>
+
+  <body>
+    <div class="container">
+      <header>
+        <div class="topbar">
+          <span> Mooding </span>
+        </div>
+        <div class="bottombar">
+          <a href="{% url 'home' %}">HOME</a>
+          <a href="{% url 'like' %}">LIKE</a>
+          <a href="{% url 'reserve' %}">RESERVE</a>
+          <a href="{% url 'mypage' %}">MYPAGE</a>
+        </div>
+      </header>
+      {% block content %} {% endblock %}
+      <div class="blank"></div>
+    </div>
+  </body>
+</html>

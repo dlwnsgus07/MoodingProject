@@ -1,0 +1,45 @@
+.two {
+
+    display: inline;
+    float: right;
+    margin-top: 4px;
+
+}
+
+.one {
+
+    display: inline-block;
+
+}
+
+.four {
+
+    display: inline;
+    float: right;
+    margin-top: -65px;
+
+}
+
+.six {
+
+    display: inline;
+    float: right;
+    margin-top: -67px;
+
+}
+
+.eight {
+
+    display: inline;
+    float: right;
+    margin-top: -69px;
+
+}
+
+.ten {
+
+    display: inline;
+    float: right;
+    margin-top: -71px;
+
+}

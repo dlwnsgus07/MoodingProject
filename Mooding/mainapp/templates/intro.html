@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+    />
+    {% load static %}
+    <title>Mooding</title>
+    <link rel="stylesheet" href="{% static 'style-intro.css'  %}" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="intro-title">
+        <span>Mooding</span>
+      </div>
+      <div class="intro-button">
+        <a href="{% url 'home' %}">START</a>
+      </div>
+    </div>
+  </body>
+</html>

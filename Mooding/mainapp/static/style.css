@@ -1,0 +1,50 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+* {
+  font-family: "Open Sans", sans-serif;
+}
+
+body {
+  min-height: 800px;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 430px;
+  width: 100%;
+}
+
+header .topbar {
+  height: 70px;
+  position: relative;
+}
+
+header .topbar span {
+  transform: translate(-50%, 0%);
+  position: absolute;
+  font-size: 18px;
+  bottom: 20px;
+  left: 50%;
+  z-index: 1;
+}
+
+header .bottombar {
+  position: fixed;
+  bottom: 0%;
+  background-color: purple;
+  color: #fff;
+  max-width: 430px;
+  width: 100%;
+  padding-bottom: 30px;
+  font-size: 24px;
+  height: 50px;
+  z-index: 3;
+  display: flex;
+}
+
+header .bottombar a {
+  padding-left: 20px;
+  text-decoration: none;
+}
