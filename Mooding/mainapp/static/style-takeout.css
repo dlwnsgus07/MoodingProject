@@ -21,9 +21,10 @@ section.takeout > article{
 	width:47%;
 	position: relative;
 	margin-bottom: 1rem;
+	text-align: center;
 }
 .menu-box > img{
-	border-radius: 3px;
+	border-radius: 10px;
 	cursor: pointer;
 	width:100%;
 	transition: all 0.3s ease;
@@ -34,4 +35,13 @@ section.takeout > article{
 
 .menu-box > span:last-child > i{
 	color:rgb(255, 221, 29);
+	margin-bottom: 30px;
+}
+
+.menu-box > span:nth-child(1) {
+	margin-top: 30px;
+}
+
+.mt-50 {
+	margin-top: 30px;
 }

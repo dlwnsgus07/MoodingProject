@@ -2,25 +2,36 @@
 {% extends 'base.html' %} {% block content %} {% load static %}
 <link rel="stylesheet" href="{% static 'style-allcafe.css' %}">
 
-<section class="main">
-<article>
-    <h2>LIKE</h2>
-</article>
+<section class="allcafe">
+    <h2><i class="fas fa-map-marker-alt"></i> 서울 특별시 강남구</h2>
+    <div class = "abutton">예약 가능</div>
+    <div class = "abutton">충전 가능</div>
+    <article>
+    <div class = "cafe-img">
+        <div class = "img-box">
+            <div section class="item"><img src="/static/img/카페12.jpg">
+                <span class="mt-30"><strong>cafe.75</strong></span>
+                <span><i class="fas fa-map-marker-alt"></i> 6.3m</span>
+                <span><i class="fas fa-star"></i> <strong>4.7</strong> (300+)</span>
+            </div>
+            <div section class="item"><img src="/static/img/카페13.jpg">
+                <span class="mt-30"><strong>ASAC</strong></span>
+                <span><i class="fas fa-map-marker-alt"></i> 8.7m</span>
+                <span><i class="fas fa-star"></i> <strong>4.1</strong> (200+)</span>
+            </div>
+            <div section class="item"><img src="/static/img/cafe14.jpg">
+                <span class="mt-30"><strong>오후</strong></span>
+                <span><i class="fas fa-map-marker-alt"></i> 10.1m</span>
+                <span><i class="fas fa-star"></i> <strong>4.5</strong> (500+)</span>
+            </div>
+            <div section class="item"><img src="/static/img/카페7.jpg">
+                <span class="mt-30"><strong>그릭트</strong></span>
+                <span><i class="fas fa-map-marker-alt"></i> 11.7m</span>
+                <span><i class="fas fa-star"></i> <strong>3.8</strong> (200+)</span>
+            </div>
+    </div>
+    </article>
 </section>
 
-<section class = "cafe-img">
-    <div class = "img-box">
-        <div section class="item"><img src="/static/img/액션가면.jpg"></div>
-        <div section class="item"><img src="/static/img/액션가면.jpg"></div>
-        <div section class="item"><img src="/static/img/액션가면.jpg"></div>
-        <div section class="item"><img src="/static/img/액션가면.jpg"></div>
-        <div section class="item"><img src="/static/img/액션가면.jpg"></div>
-        <div section class="item"><img src="/static/img/액션가면.jpg"></div>
-        <div section class="item"><img src="/static/img/액션가면.jpg"></div>
-        <div section class="item"><img src="/static/img/액션가면.jpg"></div>
-</section>
-
-
-    </body>
-</section>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous"/>
 {% endblock %}
