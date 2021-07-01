@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
-{% block head %}{% endblock %}
+{% block head %}
+{% endblock %}
 {% block content %}
 <form action="">
   <div class="search-bar">
@@ -10,33 +11,53 @@
 {% load static %}
 <section class="main">
     <div class="container">
-      <section class="one">카페 모아보기</section>      
-      <section class="two">테이크 아웃</section>
-      <section class="three">쿠폰</section>
+      <section class="one"><p class="inside">카페 모아보기</p></section>      
+      <section class="two"><p class="inside">테이크 아웃</p></section>
+      <section class="three"><p class="inside">쿠폰</p></section>
 
       
       
-        <section class="advertisement">
-
-          <div ckass="top-title">&#x1F525; 지금 뜨는 이벤트 &#x1F525;</div>
-          <div style="border: 1px solid; color:black; display: flex;">
-
-           <div class = "sgroup">
-
-<img src="../static/img/1.jpg">
-           </div>
-
-           <div class = "sgroup">
-
-          <div>글</div>
-          <div>글</div>
-          <div>글</div>
-          <div>글</div>
-            
+      <section class="advertisement">
+        <div class="top-title"><strong>&#x1F525; 지금 뜨는 이벤트 &#x1F525;</strong></div>
+        <div style=" border-radius: 10px; border: 1px solid; color:black; display: flex; margin-bottom: 20px;">
+          <div class="event-group">
+            <img src="../static/img/카페3.jpg" style=" object-fit: cover;">
           </div>
-
+          <div class="event-group">
+            <div><strong>  플루아</strong></div>
+            <div>  서울특별시 서초구</div>
+            <div>  코코넛 커피</div>
+            <div><strong>  MOODING 할인가</strong></div>
+            <div>  7500원 -> 5000원</div>
           </div>
-</section>
+        </div>
+        <div style="border-radius: 10px; border: 1px solid; color:black; display: flex;margin-bottom: 20px;">
+          <div class="event-group">
+            <img src="../static/img/카페8.jpg" style=" object-fit: cover;">
+          </div>
+          <div class="event-group">
+            <div><strong>  오거트</strong></div>
+            <div>  서울특별시 종로구</div>
+            <div>  블루베리 요거트</div>
+            <div><strong>  MOODING 할인가</strong></div>
+            <div>  12500원 -> 8800원</div>
+          </div>
+        </div>
+        <div style="border-radius: 10px; border: 1px solid; color:black; display: flex;margin-bottom: 20px;">
+          <div class="event-group">
+            <img src="../static/img/카페10.jpg" style=" object-fit: cover;">
+          </div>
+          <div class="event-group">
+            <div><strong>  Le Cafe</strong></div>
+            <div>  서울특별시 양천구</div>
+            <div>  당근 케이크</div>
+            <div><strong>  MOODING 할인가</strong></div>
+            <div>  8000원 -> 6000원</div>
+          </div>
+        </div>
+      </section>
 
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous"/>
 
 {% endblock %}
