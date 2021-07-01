@@ -1,87 +1,52 @@
 {% extends 'base.html' %} {% block content %} {% load static %}
 
+
 <section class="info-img">
   <img src="../static/img/무딩 차담점.png" />
 </section>
 
 <div class="info-cafe">
 
-  <div class ="tab clicked left">카페정보</div>
-  <div class ="tab">메뉴</div> 
-  <div class ="tab right">리뷰</div> 
-
-</div>
-
-<section class="info-cafe-detail">
-  
-
-<div class = "rbutton">예약 가능</div>
-<div class = "rbutton">충전 가능</div>
-
-<br>
-
-<div class ="title"><h3>영업정보</h3></div>
-
-<div class = "sgroup">
-<div class = "stitle"><h4>운영시간</h4></div>
-<div class="sdata">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;매일 11:00 ~ 20:00</div>
-</div>
-
-<div class = "sgroup">
-<div class = "stitle"><h4>휴무일</h4></div>
-<div class="sdata">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;매주 월요일</div>
-</div>
-
-<div class = "sgroup">
-<div class = "stitle"><h4>전화번호</h4></div>
-<div class="sdata">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;02-101-1012</div>
-</div>
-
-<div class="stag">
-
-<br>
-
-  #깔끔한 #전통적인 #데이트하기 좋은 #친구랑 같이가기 좋은
+  <div class ="r-tab r-clicked r-left">카페정보</div>
+  <div class ="r-tab r-shortbar">메뉴</div>
+  <div class ="r-tab r-right r-shortbar">리뷰</div>
+  <div class ='r-shortbar'></div>
 
 
 </div>
+
+
+
+<section class="r-info-cafe-detail">
+
+<div class='r-middlebar'>
+
+  <div class = "r-rbutton">사진 리뷰</div>
+  <div class = "starnum">별점순&nbsp;&nbsp;Ⅴ</div>
+
+
+</div>
+
+
+<div class ="r-title"><b><h3>리뷰 317개</h3></b></div>
+
+
+
+
+  <hr>
+
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous"/>
+
+
+
+
+
+
+</div>
+
+
 
 </section>
 
-
-
-<section class="info-cafe-waiting">
-
-
-<br>
-<div class='"people'>
-<div class = "ltitle"><h3>대기 인원</h3></div>
-<div class = "ldata"><h3><u>3</u>&nbsp&nbsp팀</h3></div>
-</div>
-
-<div>
-  <div class='"time'>
-<div class = "ltitle"><h3>대기 시간</h3></div>
-<div class = "ldata"><h3><u>20</u>&nbsp&nbsp분</h3></div>
-</div>
-
-<br>
-
-<input type="button" class="round-button" value="대기하기">
-
-
-<hr>
-
-<div class = "info-alert">
-
-<strong>│ 대기하기 유의사항 안내</strong>
-<br>
-
-1. 대기 예상 시간보다 대기시간이 길어질 수 있습니다. <br>
-2. 대기 인원은 본인을 제외한 팀의 개수입니다. <br>
-
-</div>
-
-</section>
 
 {% endblock %}
