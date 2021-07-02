@@ -4,6 +4,7 @@ section.allcafe > h2{
 	text-align: center;
 	padding-bottom:1rem;
 	font-weight: 400;
+	background-color: white;
 }
 
 section.allcafe > article{
@@ -12,6 +13,7 @@ section.allcafe > article{
 	justify-content: space-between;
 	padding: 0 1rem;
 	margin-bottom: 5rem;
+	background-color: white;
 }
 
 .abutton{
@@ -24,6 +26,7 @@ section.allcafe > article{
 	display: inline-block;
 	margin-top: 5px;
 	margin-bottom: 50px;
+	margin-left:4px;
 	border: black 2px solid;
     cursor: pointer;
 }
@@ -35,6 +38,7 @@ section.allcafe > article{
 
 .abutton:hover{
     background-color:black;
+	color:white;
 }
 
 
@@ -45,6 +49,7 @@ section.allcafe > article{
 	position: relative;
 	margin-bottom: 1rem;
 	text-align: center;
+	background-color: white;
 
 }
 .img-box {
@@ -53,6 +58,7 @@ section.allcafe > article{
 	justify-content: center;
 	width: 100%;
 	gap:20px;
+	cursor: pointer;
 }
 
 .item > img{
