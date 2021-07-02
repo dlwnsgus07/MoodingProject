@@ -16,6 +16,9 @@ from django.contrib import admin
 from django.urls import path
 
 import mainapp.views
+from django.conf import settings
+from django.conf.urls.static import static
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -30,4 +33,9 @@ urlpatterns = [
     path('allcafe', mainapp.views.allcafe, name = 'all_cafe'),
     path('review', mainapp.views.review, name = 'review'),
     path('takeout', mainapp.views.takeout, name='takeout'),
-]
+    path('reservation_available', mainapp.views.cafe_can_reservation, name ='reservation_available'),
+    path('charge_available', mainapp.views.cafe_can_charge, name ='charge_available')
+]   
+
+urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
+urlpatterns += static(settings.STATIC_URL, document_root = settings.STATIC_ROOT)

@@ -34,21 +34,24 @@ class Cafe(models.Model): # 카페 클래스
     explanation = models.TextField(blank=True) # 카페 설명
     reservation_available = models.BooleanField() #예약 가능여부
     charge_available = models.BooleanField() # 충전 가능 여부
+    takeout_available = models.BooleanField()# 테이크 아웃 가능 여부
     total_seats = models.SmallIntegerField() # 총 좌석 수
     used_seats = models.SmallIntegerField(null=True) # 사용하고 있는 좌석 수
     unused_seats = models.SmallIntegerField(null=True) # 미사용 좌석 수
     congestion_status = models.SmallIntegerField(default=0, choices=CONGESTION_CHOICE) # 혼잡여부(숫자료 표현 0, 1, 2) choice 활용
-    lat = models.FloatField() #위도 (영빈이형 말대로 네이버 GPS사용하기.)(영빈이형 말로는 위도 경도는 정수가 아닌 문자열로 받아서 소수점 변환이 좋음)
-    lng = models.FloatField()#경도
+    lat = models.FloatField(default=0) #위도 (영빈이형 말대로 네이버 GPS사용하기.)(영빈이형 말로는 위도 경도는 정수가 아닌 문자열로 받아서 소수점 변환이 좋음)
+    lng = models.FloatField(default=0)#경도
     thumbnail = models.ImageField(default ="#") #썸네일 이미지
     operating_hour = models.TextField(blank=True) #운영시간
     close_day = models.TextField(blank=True, choices=WEEK)  #휴무일
     cafe_phone_number = models.CharField(max_length=14, blank=True) #카페 전화번호
-    rating = models.IntegerField(blank=True) # 카페 별점 점수를 저장하는 곳
+    rating = models.FloatField(blank=True) # 카페 별점 점수를 저장하는 곳
     number_of_reivew = models.IntegerField(default=0) # 별점 평균을 저장하기 위해 리뷰 수 저장
     sum_of_reivew = models.IntegerField(default=0) # 별점 평균을 저장하기 위해 리뷰레이팅의 합 저장
-    
+    distance = models.FloatField(default=0)
 
+    def __str__(self):
+        return self.title
 class Review(models.Model): # 리뷰 서비스
     Star1 = 1
     Star2 = 2
@@ -67,6 +70,8 @@ class Review(models.Model): # 리뷰 서비스
     writer = models.CharField(max_length=20)# 작성자
     rating = models.SmallIntegerField(default=5, choices=RATING) # 별점을 사용자로부터 입력받기 위해 사용
     comment = models.TextField() #리뷰내용
+    def __str__(self):
+        return self.cafe.title
 
 
 class Product(models.Model): #판매할 상품

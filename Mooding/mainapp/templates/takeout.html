@@ -6,42 +6,14 @@
 	<h2><i class="fas fa-map-marker-alt"></i> 서울특별시 강남구</h2>
 	<h3>테이크아웃</h3>
 	<article>
+		{% for cafe in data %}
 		<div class="menu-box">
-			<img src="{% static 'img/카페5.jpg'%}" alt="menu"/>
-			<span class="mt-50">동백커피</span>
-			<span><i class="fas fa-map-marker-alt"></i> 8.9m</span>
-			<span><i class="fas fa-star"></i> <strong>3.7</strong> (200+)</span>
+			<img src="{{cafe.thumbnail.url}}" alt="menu"/>
+			<span class="mt-50">{{cafe.title}}</span>
+			<span><i class="fas fa-map-marker-alt"></i> {{cafe.distance}}m</span>
+			<span><i class="fas fa-star"></i> <strong>{{cafe.rating}}</strong> ({{cafe.number_of_reivew}})</span>
 		</div>
-		<div class="menu-box">
-			<img src="{% static 'img/카페2.jpg'%}" alt="menu"/>
-			<span class="mt-50">포레스트</span>
-			<span><i class="fas fa-map-marker-alt"></i> 12.1m</span>
-			<span><i class="fas fa-star"></i> <strong>4.2</strong> (500+)</span>
-		</div>
-		<div class="menu-box">
-			<img src="{% static 'img/카페1.jpg'%}" alt="menu"/>
-			<span class="mt-50">르봉</span>
-			<span><i class="fas fa-map-marker-alt"></i> 15.6m</span>
-			<span><i class="fas fa-star"></i> <strong>3.5</strong> (50+)</span>
-		</div>
-		<div class="menu-box">
-			<img src="{% static 'img/카페9.jpg'%}" alt="menu"/>
-			<span class="mt-50">소담</span>
-			<span><i class="fas fa-map-marker-alt"></i> 20.3m</span>
-			<span><i class="fas fa-star"></i> <strong>4.5</strong> (1000+)</span>
-		</div>
-		<div class="menu-box">
-			<img src="{% static 'img/카페20.jpg'%}" alt="menu"/>
-			<span class="mt-50">프루타</span>
-			<span><i class="fas fa-map-marker-alt"></i> 30.1m</span>
-			<span><i class="fas fa-star"></i> <strong>2.3</strong> (200+)</span>
-		</div>
-		<div class="menu-box">
-			<img src="{% static 'img/카페4.jpg'%}" alt="menu"/>
-			<span class="mt-50">위스너</span>
-			<span><i class="fas fa-map-marker-alt"></i> 32.9m</span>
-			<span><i class="fas fa-star"></i> <strong>3.3</strong> (100+)</span>
-		</div>
+		{% endfor %}
 	</article>
 </section>
 

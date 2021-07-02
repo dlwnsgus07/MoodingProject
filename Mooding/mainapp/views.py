@@ -29,16 +29,19 @@ def information(request) :
 def booking(request) :
     return render(request, 'booking.html')
 
-# def allcafe(request) :
-#     return render(request, 'allcafe.html')
 def allcafe(request) :
     cafe_objects = Cafe.objects.all()
-    return render(request, 'allcafe2.html', {'data' : cafe_objects})
+    
+    return render(request, 'allcafe.html', {'data' : cafe_objects.order_by('distance')})
+
 def review(request) :
     return render(request, 'review.html')
 
 def takeout(request) :
-    return render(request, 'takeout.html')
+    cafe_objects = Cafe.objects.all()
+    cafe_objects = cafe_objects.filter(takeout_available=True)
+    cafe_objects.order_by('distance')
+    return render(request, 'takeout.html', {'data' : cafe_objects.order_by('distance')})
 
 
 # def home(req): # 메인화면 로딩할때 사용
@@ -105,7 +108,6 @@ def cafe_edit(req, id):  #카페 내용 수정
         cafe_object.congestion_status = req.POST['congestion_status']
         # 위치랑 경도 받아오는 거 작업하기.
         cafe_object.operating_hour = req.POST['operating_hour']
-        
         cafe_object.thumbnail = req.POST['thumbnail']
         cafe_object.save()
         return redirect('/cafe/'+str(id))
@@ -116,8 +118,15 @@ def cafe_delete(req, id): #카페 삭제
     cafe_object.delete()
     return redirect('/')
 
+def cafe_can_reservation(req):
+    cafe_objects = Cafe.objects.all()
+    cafe_objects = cafe_objects.filter(reservation_available=True)
+    return render(req, 'allcafe.html', {'data' : cafe_objects.order_by('distance')})
 
-
+def cafe_can_charge(req):
+    cafe_objects = Cafe.objects.all()
+    cafe_objects = cafe_objects.filter(charge_available=True)
+    return render(req, 'allcafe.html', {'data' : cafe_objects.order_by('distance')})
 ##################################리뷰 CRUD######################################
 
 def reivew_create(req, id):
