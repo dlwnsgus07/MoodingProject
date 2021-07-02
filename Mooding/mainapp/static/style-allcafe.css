@@ -24,6 +24,7 @@ section.allcafe > article{
 	display: inline-block;
 	margin-top: 5px;
 	margin-bottom: 50px;
+	margin-left:4px;
 	border: black 2px solid;
     cursor: pointer;
 }
@@ -35,6 +36,7 @@ section.allcafe > article{
 
 .abutton:hover{
     background-color:black;
+	color:white;
 }
 
 
@@ -53,6 +55,7 @@ section.allcafe > article{
 	justify-content: center;
 	width: 100%;
 	gap:20px;
+	cursor: pointer;
 }
 
 .item > img{

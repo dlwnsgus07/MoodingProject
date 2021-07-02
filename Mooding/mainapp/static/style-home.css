@@ -24,7 +24,7 @@
     text-align: center;
     padding-bottom: 100px;
     margin-top: 30px;
-
+    cursor: pointer;
 }
 
 .main .container .one{
@@ -34,6 +34,7 @@
     border-radius: 30px;
     display: flex;
     justify-content: center;
+    
 }
 
 .main .container .two{
@@ -57,15 +58,15 @@
 }
 
 .main .container .one:hover{
-	transform : translate(0, -1rem);
+	transform : translate(0, -0.5rem);
 }
 
 .main .container .two:hover{
-	transform : translate(0, -1rem);
+	transform : translate(0, -0.5rem);
 }
 
 .main .container .three:hover{
-	transform : translate(0, -1rem);
+	transform : translate(0, -0.5rem);
 }
 
 .inside {
