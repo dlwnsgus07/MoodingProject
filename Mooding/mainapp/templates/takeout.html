@@ -7,7 +7,7 @@
 	<h3>테이크아웃</h3>
 	<article>
 		{% for cafe in data %}
-		<div class="menu-box">
+		<div class="menu-box" onclick="location.href='{%url 'information' cafe.id %}'">
 			<img src="{{cafe.thumbnail.url}}" alt="menu"/>
 			<span class="mt-50">{{cafe.title}}</span>
 			<span><i class="fas fa-map-marker-alt"></i> {{cafe.distance}}m</span>

@@ -82,7 +82,10 @@ def cafe_read(req, id): #카페 읽어오기
     cafe_object = get_object_or_404(Cafe, pk=id)
     reviews = cafe_object.review_set.all()
     if cafe_object.reservation_available:
-        queuing = cafe_object.queuing_set.all()
+        #queuing = cafe_object.queuing_set.all()
+        # queuing = Queuing.objects.all()
+        # queuing.filter(cafe=cafe_object)
+        queuing = get_object_or_404(Queuing, cafe = cafe_object)
         content = {
         'data' : cafe_object,
         'reviews' :  reviews,
@@ -94,7 +97,7 @@ def cafe_read(req, id): #카페 읽어오기
         'reviews' :  reviews,
     }
     
-    return render(req, 'cafe.html', content)
+    return render(req, 'information.html', content)
 
 def cafe_edit(req, id):  #카페 내용 수정
     cafe_object = get_object_or_404(Cafe, pk=id)
@@ -203,16 +206,14 @@ def signup_view(request):
     	
 def login_view(request):
 	res_data = {}
-	if request.method == 'POST':
-		username = request.POST['username']
-		password = request.POST['password']
-		user = auth.authenticate(request, username = username, password = password)
-		if user is not None:
-			auth.login(request, user)
-			return redirect('home')
-		else:
-			res_data['error'] = '아이디나 비밀번호가 틀렸어요~'
-	return render(request, 'login.html', res_data)
+	username = "dlwnsgus07"
+	password = "rdwg6867"
+	user = auth.authenticate(request, username = username, password = password)
+	if user is not None:
+		auth.login(request, user)
+		return redirect('home')
+	else:
+		res_data['error'] = '아이디나 비밀번호가 틀렸어요~'
     
     
 #로그아웃

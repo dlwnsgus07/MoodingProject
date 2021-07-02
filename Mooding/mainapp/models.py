@@ -21,13 +21,13 @@ class Cafe(models.Model): # 카페 클래스
         (Congestion, '혼잡')
     )
     WEEK =(
-        ('MON', '월요일'),
-        ('TUS', '화요일'),
-        ('WEN', '수요일'),
-        ('THR', '목요일'),
-        ('FRI', '금요일'),
-        ('SAT', '토요일'),
-        ('SON', '일요일'),
+        ('월요일', '월요일'),
+        ('화요일', '화요일'),
+        ('수요일', '수요일'),
+        ('목요일', '목요일'),
+        ('금요일', '금요일'),
+        ('토요일', '토요일'),
+        ('일요일', '일요일'),
     )
     #id = models.AutoField(primary_key=True) # 카페 아이디(프라이머리 키)
     title = models.CharField(max_length=100) # 카페이름
@@ -95,14 +95,15 @@ class Coupon(models.Model):
    
 class Queuing(models.Model):
     cafe = models.ForeignKey(Cafe, on_delete=models.CASCADE)
-    user = models.ForeignKey(CustomUser, on_delete = DO_NOTHING)
     wating_number = models.IntegerField(default=1)
     waiting_team = models.IntegerField(default=0)
     estimated_latency_default = models.IntegerField(default=30)
     estimated_latency = models.IntegerField(default=0)
-
+    def __str__(self):
+        return self.cafe.title
 #대기열 개인별 대기표와 카페별 대기열로 모델 나눠서 다시 만들기 
 class PersonalReservation(models.Model):
-    user = models.ForeignKey(CustomUser, on_delete=CASCADE)
-    queuing_id = models.IntegerField()
+    queuing = models.ForeignKey(Queuing, on_delete=models.CASCADE)
+    user = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
     wating_number = models.IntegerField(blank=True)
+    wating_time = models.DateTimeField(auto_now_add=True)

@@ -10,7 +10,7 @@
     <div class = "cafe-img">
         <div class = "img-box">
             {% for cafe in data %}
-            <div section class="item"><img src={{cafe.thumbnail.url}}>
+            <div section class="item" onclick="location.href='{%url 'information' cafe.id %}'"><img src={{cafe.thumbnail.url}}>
                 <span class="mt-30"><strong>{{cafe.title}}</strong></span>
                 <span><i class="fas fa-map-marker-alt"></i> {{cafe.distance}}m</span>
                 <span><i class="fas fa-star"></i> <strong>{{cafe.rating}}</strong> ({{cafe.number_of_reivew}})</span>

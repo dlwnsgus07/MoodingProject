@@ -9,7 +9,7 @@
 {% block content %}
 
 <section class="info-img">
-  <img src="../static/img/무딩 차담점.png" />
+  <img src={{data.thumbnail.url}} />
 </section>
 
 <div class="info-cafe">
@@ -23,34 +23,39 @@
 
 <section class="info-cafe-detail">
 
-
+{% if data.reservation_available %}
 <div class = "rbutton">예약 가능</div>
+{% endif %}
+{% if data.charge_available %}
 <div class = "rbutton">충전 가능</div>
-
+{% endif %}
+{% if data.takeout_available %}
+<div class = "rbutton">테이크아웃</div>
+{% endif %}
 <br>
 
 <div class ="title"><h3>영업정보</h3></div>
 
 <div class = "sgroup">
 <div class = "stitle"><h4>운영시간</h4></div>
-<div class="sdata">매일 11:00 ~ 20:00</div>
+<div class="sdata">{{data.operating_hour}}</div>
 </div>
 
 <div class = "sgroup">
 <div class = "stitle"><h4>휴무일</h4></div>
-<div class="sdata">매주 화요일</div>
+<div class="sdata">{{data.close_day}}</div>
 </div>
 
 <div class = "sgroup">
 <div class = "stitle"><h4>전화번호</h4></div>
-<div class="sdata">02-101-1012</div>
+<div class="sdata">{{data.cafe_phone_number}}</div>
 </div>
 
 <div class="stag">
 
 <br>
-
-  #공부하기_좋은&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#카공_스팟&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#조용한
+  <!-- #공부하기_좋은&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#카공_스팟&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#조용한 -->
+  {{data.explanation}}
 <br>
 
 </div>
@@ -60,13 +65,13 @@
 
 <div class='"people'>
 <div class = "ltitle"><h3>대기 인원</h3></div>
-<div class = "ldata"><h3><u>3</u>&nbsp;&nbsp;팀</h3></div>
+<div class = "ldata"><h3><u>{{queuing.waiting_team}}</u>&nbsp;&nbsp;팀</h3></div>
 </div>
 
 <div>
 <div class='"time'>
 <div class = "ltitle"><h3>대기 시간</h3></div>
-<div class = "ldata"><h3><u>20</u>&nbsp;&nbsp;분</h3></div>
+<div class = "ldata"><h3><u>{{queuing.estimated_latency}}</u>&nbsp;&nbsp;분</h3></div>
 </div>
 
 </section>

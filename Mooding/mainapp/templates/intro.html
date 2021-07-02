@@ -7,6 +7,7 @@
       content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
     />
     {% load static %}
+  
     <title>Mooding</title>
     <link rel="stylesheet" href="{% static 'style-intro.css'  %}" />
   </head>
@@ -16,7 +17,7 @@
         <img src="{% static 'img/레이어2.png'%}"/>
       </div>
       <div class="intro-button">
-        <a href="{% url 'home' %}">START</a>
+        <a href="{% url 'login' %}">START</a>
       </div>
     </div>
   </body>
