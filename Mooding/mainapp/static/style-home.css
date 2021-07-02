@@ -62,7 +62,9 @@
     display: flex;
     justify-content: center;
 }
-
+.one, .two, .three{
+    transition: all 0.3s ease;
+}
 .main .container .one:hover{
 	transform : translate(0, -0.5rem);
 }

@@ -52,6 +52,9 @@ section.allcafe > article{
 	background-color: white;
 
 }
+.item > img{
+	transition: all 0.3s ease;
+}
 .img-box {
 	display: flex;
 	flex-direction: column;

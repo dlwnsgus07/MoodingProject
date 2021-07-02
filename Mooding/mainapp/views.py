@@ -257,12 +257,22 @@ def cancel_queue(req,id):
     queueing_object = get_object_or_404(Queuing, pk = id)
     user = req.user
     PR = PersonalReservation()
-    PR = PR.objects.filter(user==user)
+    PR = PR.objects.filter(user=user)
     PR.delete()
     queueing_object.waiting_team -= 1
     queueing_object.estimated_latency = queueing_object.waiting_team*queueing_object.estimated_latency_default
 
-
+def booking_read(req):
+    user = req.user
+    PR = get_object_or_404(PersonalReservation, user = user)
+    queueing_object = PR.queuing
+    cafe_object = queueing_object.cafe
+    content = {
+        'cafe' : cafe_object,
+        'personalReservation' :  PR,
+        'queuing' : queueing_object,
+    }
+    return render(req, 'booking.html', content)
 ###################################위치 정보에 따른 카페 필터##########################
 
 def location_base_sorting(self, req):

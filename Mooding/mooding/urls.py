@@ -26,7 +26,7 @@ urlpatterns = [
     path('intro', mainapp.views.intro, name = 'intro'),
     path('home/', mainapp.views.home, name = 'home'),
     path('like', mainapp.views.like, name = 'like'),
-    path('reserve', mainapp.views.reserve, name = 'reserve'),
+    path('reserve', mainapp.views.booking_read, name = 'reserve'),
     path('mypage', mainapp.views.mypage, name = 'mypage'),
     path('coupon', mainapp.views.coupon, name = 'coupon'),
     path('information/<int:id>', mainapp.views.cafe_read, name = 'information'),
@@ -36,7 +36,7 @@ urlpatterns = [
     path('takeout', mainapp.views.takeout, name='takeout'),
     path('reservation_available', mainapp.views.cafe_can_reservation, name ='reservation_available'),
     path('charge_available', mainapp.views.cafe_can_charge, name ='charge_available'),
-    path('login', mainapp.views.login_view, name='login')
+    path('login', mainapp.views.login_view, name='login'),
 ]   
 
 urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
