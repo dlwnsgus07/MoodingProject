@@ -36,12 +36,9 @@
 
 .r-clicked {
 
-    color: #000000;
     width: 33.4%;
-    background-color: #F1F1F1;
     border-left: 3px solid #E4E4E4;
     border-top: 3px solid #E4E4E4;
-    border-right: 3px solid #E4E4E4;
     border-bottom: 3px solid #F1F1F1;
 
 }
@@ -55,9 +52,14 @@
 
 .r-right {
 
+    color: #000000;
+    width: 33.4%;
+    width: 33.4%;
     border-top-right-radius: 30px;
     border-top: 3px solid #E4E4E4;
     border-right: 3px solid #E4E4E4;
+    border-left: 3px solid #E4E4E4;
+    background-color: #F1F1F1;
 }
 
 .r-rbutton {
@@ -99,5 +101,41 @@
 
 
 
+
+}
+
+
+
+.r-star {
+
+    color:rgb(255, 221, 29)
+
+}
+
+.star-mg {
+    margin-top: 20px;
+    margin-left: 30px;
+}
+
+.r-name {
+
+    margin-top: 10px;
+    margin-left: 30px;
+    color: #707070;
+
+}
+
+
+.r-review {
+
+    margin-top: 10px;
+    margin-left: 30px;
+    margin-bottom: 30px;
+
+}
+
+.r-star-gray {
+
+    color:#dadada
 
 }
