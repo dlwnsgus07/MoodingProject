@@ -1,4 +1,12 @@
-{% extends 'base.html' %} {% block content %} {% load static %}
+{% extends 'base.html' %}
+ {% load static %}
+{% block head %}
+
+    <link rel="stylesheet" href="{% static 'style-information.css' %}" />
+
+{% endblock %}
+
+{% block content %}
 
 <section class="info-img">
   <img src="../static/img/무딩 차담점.png" />
