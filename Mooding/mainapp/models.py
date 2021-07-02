@@ -106,4 +106,4 @@ class PersonalReservation(models.Model):
     queuing = models.ForeignKey(Queuing, on_delete=models.CASCADE)
     user = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
     wating_number = models.IntegerField(blank=True)
-    wating_time = models.DateTimeField(auto_now_add=True)
+  #  wating_time = models.DateTimeField(auto_now_add=True)

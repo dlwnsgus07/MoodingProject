@@ -16,7 +16,7 @@
 
   <div class ="tab clicked left"><b>카페정보</b></div>
   <div class ="tab shortbar">메뉴</div>
-  <div class ="tab right shortbar">리뷰</div>
+  <div class ="tab right shortbar" onclick="location.href='{% url 'review' data.id %}'">리뷰</div>
   <div class ='shortbar'></div>
 
 </div>
@@ -80,7 +80,7 @@
 <div class="btn-group">
 
 
-  <input type="button" class="round-button" value="대기하기"></input>
+  <input type="button" class="round-button" value="대기하기" onclick="location.href='{% url 'booking' queuing.id %}'"></input>
 
 
 </div>

@@ -2,12 +2,12 @@
 
 
 <section class="info-img">
-  <img src="../static/img/무딩 차담점.png" />
+  <img src="{{data.thumbnail.url}}" />
 </section>
 
 <div class="info-cafe">
 
-  <div class ="r-tab r-clicked r-left r-shortbar">카페정보</div>
+  <div class ="r-tab r-clicked r-left r-shortbar" onclick="location.href='{%url 'information' data.id %}'">카페정보</div>
   <div class ="r-tab r-shortbar">메뉴</div>
   <div class ="r-tab r-right"><b>리뷰</b></div>
   <div class ='r-shortbar'></div>

@@ -131,8 +131,16 @@ def cafe_can_charge(req):
     cafe_objects = cafe_objects.filter(charge_available=True)
     return render(req, 'allcafe.html', {'data' : cafe_objects.order_by('distance')})
 ##################################리뷰 CRUD######################################
-
-def reivew_create(req, id):
+def review_read(req, id):
+    cafe_object = get_object_or_404(Cafe, pk=id)
+    #reviews = cafe_object.review_set.all()
+    content = {
+        'data' : cafe_object,
+        #'reviews' :  reviews,
+    }
+    return render(req, 'review.html', content)
+    
+def review_create(req, id):
     if req.method == 'POST':
         cafe_object = get_object_or_404(Cafe, pk=id)
         user = CustomUser.objects.get(user=req.user)
@@ -227,10 +235,23 @@ def logout_view(request):
 def add_queue(req, id): #대기열 추가인데. 유저당 대기번호를 하나씩 발급해 주어야 하나. 일단 프로토 타입임으로 임시로 보여주기식
     queueing_object = get_object_or_404(Queuing, pk = id)
     user = req.user
+    cafe = queueing_object.cafe
     queueing_object.waiting_team += 1
     queueing_object.wating_number += 1
-    user.personalReservation_set.create(queing_id = id, wating_number = queueing_object.wating_number)
+    PR = PersonalReservation()
+    PR.queuing = queueing_object
+    PR.user = user
+    PR.wating_number = queueing_object.wating_number
+    PR.save() 
     queueing_object.estimated_latency = queueing_object.waiting_team*queueing_object.estimated_latency_default
+    queueing_object.save()
+    content = {
+        'cafe' : cafe,
+        'personalReservation' :  PR,
+        'queuing' : queueing_object,
+    }
+    
+    return render(req, 'booking.html', content)
 
 def cancel_queue(req,id):
     queueing_object = get_object_or_404(Queuing, pk = id)
