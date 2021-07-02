@@ -4,6 +4,11 @@
     margin-left: auto;
     margin-right: auto;
     color: gray;
+    background-color: white;
+}
+
+.allcafe{
+    background-color: white;
 }
 
 .form-control-text {
@@ -25,6 +30,7 @@
     padding-bottom: 100px;
     margin-top: 30px;
     cursor: pointer;
+    background-color: white;
 }
 
 .main .container .one{
