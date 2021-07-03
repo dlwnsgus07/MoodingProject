@@ -34,18 +34,39 @@ header .topbar span {
 header .bottombar {
   position: fixed;
   bottom: 0%;
-  background-color: purple;
+  background-color: black;
   color: #fff;
   max-width: 430px;
   width: 100%;
-  padding-bottom: 30px;
+ 
   font-size: 24px;
-  height: 50px;
+  height: 80px;
   z-index: 3;
   display: flex;
 }
 
 header .bottombar a {
-  padding-left: 20px;
+
   text-decoration: none;
+
+}
+
+.bottombar>a>img{
+ width: 35px;
+ height: 35px; 
+}
+
+.bottombar{
+  justify-content: space-around;
+  align-items: center;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+.bottombar > a{
+  display: inherit;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: white;
+  font-size: 17px;
 }

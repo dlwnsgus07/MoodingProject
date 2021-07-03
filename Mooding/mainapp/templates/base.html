@@ -13,7 +13,6 @@
     <link rel="stylesheet" href="{% static 'style-review.css?after' %}" />
     <link rel="stylesheet" href="{% static 'style-home.css' %}" />
     <link rel="stylesheet" href="{% static 'style-coupon.css' %}" />
-
     <link rel="stylesheet" href="{% static 'style-allcafe.css' %}" />
     <link rel='stylesheet' href="{% static 'style-review.css' %}" />
     <link rel="stylesheet" href="{% static 'style-booking.css' %}" />
@@ -27,10 +26,14 @@
           <span> Mooding </span>
         </div>
         <div class="bottombar">
-          <a href="{% url 'home' %}">HOME</a>
-          <a href="{% url 'like' %}">LIKE</a>
-          <a href="{% url 'reserve' %}">RESERVE</a>
-          <a href="{% url 'mypage' %}">MYPAGE</a>
+          <a href="{% url 'home' %}"><img src ="{% static 'img/home.png' %}">
+          홈</a>
+          <a href="{% url 'like' %}"><img src ="{% static 'img/heart.png' %}">
+          관심 카페</a>
+          <a href="{% url 'reserve' %}"><img src = "{% static 'img/check.png' %}">
+          예약 현황</a>
+          <a href="{% url 'mypage' %}"><img src = "{% static 'img/user.png' %}">
+          마이페이지</a>
         </div>
       </header>
       {% block content %} {% endblock %}

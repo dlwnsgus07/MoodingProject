@@ -82,7 +82,8 @@ def cafe_read(req, id): #카페 읽어오기
     cafe_object = get_object_or_404(Cafe, pk=id)
     reviews = cafe_object.review_set.all()
     if cafe_object.reservation_available:
-        #queuing = cafe_object.queuing_set.all()
+        # queuing = cafe_object.queuing_set.all()
+        # print(queuing)
         # queuing = Queuing.objects.all()
         # queuing.filter(cafe=cafe_object)
         queuing = get_object_or_404(Queuing, cafe = cafe_object)
